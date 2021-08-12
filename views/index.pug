@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  #map(class='center')
+  div(class="fluid-container", id="review-container")
+    div(class="row text-center")
+      div(id="review-title")
+    #reviews 
+  script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD22Gz7XtG1YIFyroveY2bbkq4PWk64Urc&callback=initMap&libraries=places&v=weekly" async)

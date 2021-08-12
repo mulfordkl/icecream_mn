@@ -1,0 +1,63 @@
+extends layout
+
+block content
+
+    div(class="container py-4 my-4" style="border-radius: 8px; background-color: #396AC3")
+        form(action="/reviews/submit_review" method="post" class="requires-validation" novalidate)
+            div(class="row")
+                div(class="col-md")
+                    #review_header
+                        h1 Add Review
+                        hr
+            div(class="row g-3 mx-1")
+                div(class="col-md-6")
+                    label(for='shop_name' class='form-label text-white') Ice Cream Shop
+                    input(type="text", name="shop_name" id="shop_name_input" class="form-control form-control-lg" required)
+                    div(class="valid-feedback")
+                    div(class="invalid-feedback")
+                        h6 <strong>Field Required</strong> 
+                div(class="col-md-6")
+                    label(for="review_date" class='form-label text-white') Review Date
+                    input(type="date", name="review_date" class="form-control form-control" required)
+                    div(class="valid-feedback")
+                    div(class="invalid-feedback")
+                        h6 <strong>Field Required</strong> 
+                div(class="col-md-6")
+                    label(for="flavors_tried" class="form-label text-white") Flavors Tried
+                    input(type="text", name="flavors_tried" class="form-control form-control-lg" required)
+                    div(class="valid-feedback")
+                    div(class="invalid-feedback")
+                        h6 <strong>Field Required</strong> 
+                div(class="col-md-6")
+                    label(for="cone_tried" class="form-label text-white") Cone 
+                    select(name="cone_tried" class="form-control form-control-lg" required)
+                        option(value="" disabled selected) Select...
+                        option(value="Sugar cone") Sugar Cone
+                        option(value="Waffle cone") Waffle Cone 
+                        option(value="Sugar cone") Cake Cone
+                        option(value="Dish") Dish 
+                div(class="col-md-4")
+                    label(for="flavor_score" class="form-label text-white") Flavor Score (0-10)
+                    input(type="number", name="flavor_score" min="0" max="10" step="1" class="form-control form-control-lg" required)
+                    div(class="valid-feedback")
+                    div(class="invalid-feedback")
+                        h6 <strong>Select a number 0-10</strong>
+                div(class="col-md-4")
+                    label(for="texture_score" class="form-label text-white") Texture Score (0-10)
+                    input(type="number", name="texture_score" min="0" max="10" step="1" class="form-control form-control-lg" required)
+                    div(class="valid-feedback")
+                    div(class="invalid-feedback")
+                        h6 <strong>Select a number 0-10</strong> 
+                div(class="col-md-4")
+                    label(for="overall_score" class="form-label text-white") Overall Score (0-10) 
+                    input(type="number", name="overall_score" min="0" max="10" step="1" class="form-control form-control-lg" required)
+                    div(class="valid-feedback")
+                    div(class="invalid-feedback")
+                        h6 <strong>Select a number 0-10</strong>
+                div(class="col-md-12")
+                    label(for="comments" class="form-label text-white") Comments 
+                    textarea(name="comments" rows="3" class="form-control form-control-lg")               
+                div(class="col-6")
+                    input(class='btn btn-lg' style="background-color: white; color: #396AC3;" type="submit" value="Submit")
+
+

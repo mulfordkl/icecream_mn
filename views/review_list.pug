@@ -1,0 +1,25 @@
+extends layout
+
+block content
+    div(class="fluid-container")
+        div(class="row")        
+            each review in reviews
+                div(class="col-xl-6")
+                    div(class="card review-card")
+                        div(class="card-header d-inline" style="background-color: #396AC3;")
+                            h5(class="card-title text-white") Shop: #{review.shop_name}                           
+                            h5(class="card-title text-white") Reviewer: #{review.reviewer}
+                            h5(class="card-title text-white") Date: #{review.review_date}
+                        div(class="card-body")
+                            div(class="container-fluid")
+                                div(class="row")
+                                    div(class="col-lg-3 text-left")
+                                        p(class="card-text") <strong>Flavors:</strong> #{review.flavors_tried} <br> <strong>Cone:</strong> #{review.cone_tried}
+                                    div(class="col-md-3 text-center")
+                                        p(class="card-text") Flavor Score <br> #{review.flavor_score} / 10 
+                                    div(class="col-md-3 text-center")
+                                        p(class="card-text") Texture Score <br> #{review.texture_score} / 10 
+                                    div(class="col-md-3 text-center")
+                                        p(class="card-text") Overall Score <br> #{review.overall_score} / 10 
+                                    div(class="col-md-12 text-left")
+                                        p(class="card-text") Comments: #{review.comments} 

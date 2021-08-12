@@ -1,0 +1,50 @@
+extends layout
+
+block content
+
+    div(class="container py-4 my-4" style="border-radius: 8px; background-color: #396AC3")
+        form(action="/shops/submit_new_shop" method="post" class="requires-validation" novalidate)
+            div(class="row")
+                div(class="col-md")
+                    #review_header
+                        h1 Add Shop
+                        hr
+            div(class="row g-3 mx-1")
+                div(class="col-md-12")
+                    label(for='shop_name' class='form-label text-white') Ice Cream Shop
+                    input(type="text", name="shop_name" id="shop_name" class="form-control form-control-lg" required)
+                    div(class="valid-feedback")
+                    div(class="invalid-feedback")
+                        h6 <strong>Field Required</strong>
+                div(class="col-md-12")
+                    label(for="street_address" class='form-label text-white') Street Address
+                    input(type="text", name="street_address" class="form-control form-control form-control-lg" required)
+                    div(class="valid-feedback")
+                    div(class="invalid-feedback")
+                        h6 <strong>Field Required</strong>
+                div(class="col-md-5")
+                    label(for="city" class='form-label text-white') City
+                    input(type="text", name="city" class="form-control form-control form-control-lg" required)
+                    div(class="valid-feedback")
+                    div(class="invalid-feedback")
+                        h6 <strong>Field Required</strong>
+                div(class="col-md-3")
+                    label(for="state" class='form-label text-white') State
+                    select(name="state" class="form-control form-control-lg" required)
+                        option(value="" disabled selected) Select...
+                        option(value="MN") MN
+                        option(value="WI") WI 
+                        option(value="IA") IA
+                div(class="col-md-4")
+                    label(for="zipcode" class='form-label text-white') Zip Code
+                    input(type="text", name="zipcode" class="form-control form-control form-control-lg" required)
+                    div(class="valid-feedback")
+                    div(class="invalid-feedback")
+                        h6 <strong>Please enter a valid US Zip Code</strong>
+                div(class="col-md-12")
+                    label(for="website" class="form-label text-white") Website
+                    input(type="url", name="website" class="form-control form-control-lg")
+                div(class="col-12")
+                    input(class='btn btn-lg' style="background-color: white; color: #396AC3;" type="submit" value="Submit")
+    
+    
